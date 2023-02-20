@@ -1,0 +1,108 @@
+.HeaderComponentContainer {
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.HeaderLogoContainer {
+  /* border: 1px solid red; */
+  width: 10%;
+}
+
+.HeadercenterContainer {
+  /* border: 1px solid red; */
+  width: 30%;
+  /* display: flex; */
+  align-items: center;
+}
+
+.HeaderRightContainer {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.HeaderPagesListContainer {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  height: 50%;
+  text-decoration: none;
+}
+
+.HeaderSingupButton {
+  width: 111px;
+  height: 46px;
+  left: 1094px;
+  top: 30px;
+  background: #1c6ef7;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.HeaderLoginButton {
+  border: none;
+  background: none;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 550;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1c6ef7;
+  cursor: pointer;
+}
+
+.HeaderPagesListItem {
+  font-family: "Poppins",;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #242424;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  text-decoration: none;
+}
+
+.HeaderLogoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 76px;
+  top: 39px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #242424;
+}
+
+.HeaderPagesListItemCurrent {
+  font-family: "Poppins",;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #1c6ef7;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

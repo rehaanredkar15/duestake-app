@@ -1,0 +1,107 @@
+.ProcessMainContainer {
+  /* border: 1px solid blue; */
+  height: 100%;
+}
+
+.ProcessTopContainer {
+  /* border: 1px solid red; */
+  height: 18%;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  margin-left: 4rem;
+}
+
+.ProcessMainDataContainer {
+  /* border: 1px solid yellow; */
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 5rem;
+}
+
+.ProcessTitle {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 66px;
+  letter-spacing: -0.03em;
+  color: #000000;
+}
+
+.ProcessMainDataComponent {
+  /* border: 1px solid red; */
+  height: 50%;
+  width: 30%;
+  box-sizing: border-box;
+  width: 359.13px;
+  height: 382px;
+  left: 75px;
+  top: 1256px;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #dbe4e9;
+  border-radius: 20px;
+}
+
+
+.CardTopContainer{
+ 
+  font-family: 'Manrope',;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 30px;
+  /* identical to box height */
+  color: #000000;
+}
+
+
+
+.ProcessInformationContainer {
+  /* border: 1px solid red; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CardBottomDetailsContainer {
+  /* border: 1px solid red; */
+  width: 60%;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  /* or 186% */
+
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.CardTopIconContainer {
+  /* border: 1px solid red; */
+  margin-bottom: 20px;
+}
+
+.CardIconImage {
+  height: 50px;
+  width: 50px;
+}
+
+.CardTitleContainer {
+  margin-bottom: 10px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 34px;
+  /* or 113% */
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #000000;
+}

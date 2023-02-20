@@ -1,0 +1,44 @@
+.PartnerMainComponent {
+  /* border: 1px solid red; */
+  height: 100%;
+  background: #f5f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
+
+.PartnetMainTitle {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  /* identical to box height */
+  text-align: center;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.DuestakePartnerContainer {
+  width: 189px;
+  height: 53px;
+  left: 172px;
+  top: 860px;
+  margin-left: 10px;
+  /* background: #d9d9d9; */
+  /* border: 1px solid  red; */
+}
+
+
+.DuesStakePartnerContainer{
+    display: flex;
+    /* border: 1px solid  red; */
+    width: 80%;
+    justify-content: space-between;
+}
+
+.DuestakePartnerBankImg{
+  height: 150%;
+  width: 50%;
+}

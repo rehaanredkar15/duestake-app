@@ -1,0 +1,53 @@
+.SubBannerMainContainer {
+  /* border: 1px solid red; */
+  height: 100%;
+  /* padding: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.SubBannerMainImage {
+  height: 80%;
+  width: 80%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.SubBannerMainContainer img {
+  width: 80%;
+  height: auto;
+}
+
+.SubBannerMainContainer .btn {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  cursor: pointer;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+  width: 223px;
+  height: 67px;
+  border: none;
+  font-family: "Manrope",;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  /* identical to box height, or 167% */
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #1c6ef7;
+}
+
+/* .SubBannerMainContainer .btn:hover {
+    background-color: black;
+  } */
