@@ -25,7 +25,7 @@ const FormPage2 = ({ onCompleted, setPanCadLock, PanCadLock }) => {
   const [fullName, setFullName] = useState(user.userFullName); // a string state variable to store the person's full name
   const [maritalStatus, setMaritalStatus] = useState(user.userMaritalStatus);
   const [gender, setGender] = useState(user.userGender);
-  let today = moment().format("dd/mm/yyyy");
+  let today = moment();
   let DOB = user.userDOB ? user.userDOB : today;
   const [selectedBirthDate, handleDateChange] = useState(new Date(DOB));
   const [monthlyExpense, setMonthlyExpense] = useState(user.userMonthlyExpense); // a number state variable to store the person's monthly expenses
