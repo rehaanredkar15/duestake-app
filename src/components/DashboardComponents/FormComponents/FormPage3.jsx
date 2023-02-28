@@ -136,6 +136,7 @@ const FormPage3 = ({ onCompleted, setPanCadLock,PanCadLock }) => {
             options={states}
             getOptionLabel={(option) => option}
             value={selectedState}
+            disabled={PanCadLock}
             defaultValue={user.userState}
             onChange={(event, value) => setSelectedState(value)}
             renderInput={(params) => (
@@ -149,6 +150,7 @@ const FormPage3 = ({ onCompleted, setPanCadLock,PanCadLock }) => {
             options={cities}
             getOptionLabel={(option) => option}
             value={selectedCity}
+            disabled={PanCadLock}
             defaultValue={user.userCity}
             onChange={(event, value) => setSelectedCity(value)}
             renderInput={(params) => (
