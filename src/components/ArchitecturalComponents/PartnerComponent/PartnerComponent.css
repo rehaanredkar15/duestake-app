@@ -1,17 +1,16 @@
 .PartnerMainComponent {
   /* border: 1px solid red; */
   height: 100%;
-  background: #f5f6f8;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column ;
+  flex-direction: column;
 }
 
 .PartnetMainTitle {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
   font-size: 22px;
   line-height: 30px;
   /* identical to box height */
@@ -20,25 +19,64 @@
   margin-bottom: 2rem;
 }
 
+.LoanDetailBottom {
+  width: 70%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  /* or 186% */
+
+  text-align: center;
+
+  color: #34373d;
+}
+
 .DuestakePartnerContainer {
-  width: 189px;
-  height: 53px;
-  left: 172px;
-  top: 860px;
+  width: 206px;
+  height: 76px;
+  left: 874px;
+  top: 856px;
+  background: #fdfdfd;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 25px 25px rgba(17, 17, 17, 0.06);
+  border-radius: 9px;
   margin-left: 10px;
-  /* background: #d9d9d9; */
-  /* border: 1px solid  red; */
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.DuesStakePartnerContainer{
-    display: flex;
-    /* border: 1px solid  red; */
-    width: 80%;
-    justify-content: space-between;
+.DuesStakePartnerContainer {
+  display: grid;
+  /* border: 1px solid red; */
+  width: 80%;
+  height: 50%;
+  padding: 3rem;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-between;
 }
 
-.DuestakePartnerBankImg{
+.DuestakePartnerBankImg {
   height: 150%;
   width: 50%;
+}
+
+
+.PartnerIcon{
+  /* border: 1px solid red; */
+  height: 55%;
+  width: 20%;
+}
+
+.PartnerIconTitle{
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 30px;
+  margin-left: 10px;
+  /* identical to box height */
+  text-align: center;
+  color: #000000;
 }

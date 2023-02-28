@@ -1,0 +1,125 @@
+.DashboardComponentMainContainer {
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.LeftSidebarContainer {
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 23px 12px 36px -45px rgba(0, 0, 0, 0.75);
+}
+
+.MainDashboardContainer {
+  /* border: 1px solid red; */
+  height: 80%;
+  width: 80%;
+}
+
+.DashboardSidebarMenuContainer {
+  /* border: 1px solid red; */
+  height: 80%;
+}
+
+.SidebarMenuContainer {
+  list-style: none;
+  /* border: 1px solid red; */
+  height: 100%;
+  display: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.SidebarMenuContainerkeys {
+  /* border: 1px solid red; */
+  cursor: pointer;
+  width: 95%;
+  height: 57px;
+  left: 0px;
+  top: 206px;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", "sans-serif";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height, or 150% */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #5a5a5f;
+}
+
+.SidebarMenuContainerkeysCurrent {
+  /* border: 1px solid red; */
+  cursor: pointer;
+  width: 95%;
+  height: 57px;
+  left: 0px;
+  top: 206px;
+  margin-bottom: 3rem;
+  background: #c6dbfd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", "sans-serif";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  color: #5a5a5f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.IconSidebar {
+  margin-right: 15px;
+}
+
+.SidebarLogoutButton {
+  /* border: 1px solid red; */
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LogoutButton {
+  font-family: "Poppins", "sans-serif";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height, or 150% */
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5a5a5f;
+}
+
+
+.MainDashboardContainer{
+  display: flex;
+}

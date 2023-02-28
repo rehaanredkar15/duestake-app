@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter,
@@ -9,7 +10,6 @@ import Snackbar from './components/HelperComponents/Snackbar';
 import ScrollToTop from './helpers/ScrollingToTopHelper/ScrollToTop'
 import LandingPage from './pages/LandingPage/LandingPage';
 import LoginPage from './pages/AuthPages/Login/LoginPage';
-import { useState } from 'react';
 import SignUpPage from './pages/AuthPages/SignUp/SignUpPage';
 
 
@@ -23,9 +23,9 @@ function App() {
      <BrowserRouter>
        <ScrollToTop/>
       <Routes>
-        <Route path="/" element={<LandingPage IsCurrentPage={IsCurrentPage} setIsCurrentPage={setIsCurrentPage} />} />
-        <Route path="/login" element={<LoginPage />}/>
-        <Route path="/signup" element={<SignUpPage />}/>
+        <Route path="/*" element={<LandingPage IsCurrentPage={IsCurrentPage} setIsCurrentPage={setIsCurrentPage} />} />
+        {/* <Route path="/login" element={<LoginPage />}/>
+        <Route path="/signup" element={<SignUpPage />}/> */}
       </Routes>
     </BrowserRouter>
   </> 

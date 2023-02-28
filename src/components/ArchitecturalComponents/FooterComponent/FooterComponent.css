@@ -1,44 +1,36 @@
 .FooterMainContainerComponent {
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2rem;
-}
-
-.FooterMainContainer {
   /* border: 1px solid red; */
-  height: 60%;
+  height: 80%;
   display: flex;
-  width: 100%;
+  justify-content: center;
+  width: 98%;
+  padding: 2rem;
 }
 
 .FooterContainerHead {
   /* border: 1px solid blue; */
-  height: 90%;
-  width: 25%;
+  height: 80%;
+  width: 35%;
 }
 
 .FooterContainerCompany {
   /* border: 1px solid yellow; */
   height: 50%;
-  width: 20%;
+  width: 12%;
   padding: 2rem;
 }
 
 .FooterContainerResources {
   /* border: 1px solid purple; */
   height: 50%;
-  width: 20%;
+  width: 12%;
   padding: 2rem;
 }
 
 .FooterContainerNewsletter {
   /* border: 1px solid green; */
-  height: 90%;
-  width: 40%;
+  height: 70%;
+  width: 20%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -48,7 +40,7 @@
   display: flex;
   flex-direction: column;
   /* border: 1px solid red; */
-  height: 80%;
+  height: 90%;
   width: 80%;
   padding: 2rem;
 }
@@ -57,7 +49,27 @@
   display: flex;
   /* border: 1px solid blue; */
   height: 90%;
+  width: 100%;
   flex-direction: column;
+}
+
+.FooterCompanyDetailsContactSection {
+  display: flex;
+  /* border: 1px solid green; */
+  margin-top: 10px;
+  height: 90%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.MobileDetailsFooter {
+  font-family: "Poppins", sans-serif,;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #33373e;
+  margin-bottom: 10px;
 }
 
 .FooterCompanyName {
@@ -72,41 +84,55 @@
 
 .FooterCompanyNameBottom {
   margin-top: 20px;
-  font-family: "Manrope";
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  color: #757095;
+  font-size: 12px;
+  line-height: 16px;
+  width: 70%;
+  color: #33373e;
 }
 
 .FooterCompanyDetailsBottom {
   /* border: 1px solid red; */
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  margin-left: 2rem;
+  color: #21252c;
+}
+
+.RightsFooter {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  font-family: "Poppins", sans-serif;
+  color: #21252c;
 }
 
 .TitleBottomComponent {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 24px;
-  /* identical to box height, or 114% */
-  color: #181433;
+  /* border: 1px solid red; */
+  font-family: "Poppins", sans-serif;
+  font-weight:600;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #21252c;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
 }
 
 .TitleBottomList {
-  margin-top: 4rem;
   /* border: 1px solid red; */
-  list-style: none;
-  margin-right: 35px;
+  font-family: "Poppins", sans-serif;
+
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  list-style-type: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .TitleBottomListItem {
@@ -123,12 +149,11 @@
 }
 
 .FooterJoinOur {
-  font-family: "Manrope";
-  font-style: normal;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 25px;
-  line-height: 24px;
-  color: #181433;
+  font-size: 18px;
+  line-height: 25px;
+  color: #21252c;
 }
 
 .FooterContainerNews {
@@ -162,12 +187,11 @@
   top: 2809px;
   background: #1c6ef7;
   border-radius: 8px;
-  font-family: "Nunito Sans";
-  font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 22px;
-  /* identical to box height */
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
   border: none;
   letter-spacing: 0.06em;
   color: #ffffff;
@@ -176,7 +200,9 @@
 
 .EmailInputContainer {
   display: flex;
-  align-items: center;
+  margin-top: 10px;
+  /* align-items: center; */
+  flex-direction: column;
 }
 
 .BottomTextForEmail {
@@ -192,8 +218,11 @@
   margin-top: 2rem;
 }
 
+.FooterBottomIcon {
+  width: 50px;
+  height: 30px;
+}
 
-.FooterBottomIcon{
-    width: 50px;
-    height: 30px;
+.LogoDuestakeFooter {
+  height: 100%;
 }

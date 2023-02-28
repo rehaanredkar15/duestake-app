@@ -14,24 +14,22 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { VerifyOtp } from "../../../redux/actions/AuthActions/VerifyOtpAction";
-
-
+import { GetUserById } from "../../../redux/actions/UserActions/getUserByIdAction";
 
 const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
-  let userLoginContactRef = useRef();
+  let userLoginContactRef = useRef(null);
+  const Otp = useRef();
+  const navigate = useNavigate();
   const [UserPhoneError, setUserPhoneError] = useState("");
   const dispatch = useDispatch();
   const [isFetching, setisFetching] = useState(false);
   const [OpenModal, setOpenModal] = useState(false);
-  const Otp = useRef();
-  const navigate = useNavigate();
+  const [UserId, setUserId] = useState(false);
 
   const handleModalUpdate = () => {
     setOpenModal(false);
     setisFetching(false);
   };
-
-
 
   const handleLogin = () => {
     setisFetching(true);
@@ -42,7 +40,7 @@ const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
     }
 
     let uploadData = {
-      userContactNo: userLoginContactRef.current?.value.split(" ").join(""),
+      userContactNo: "+91" + userLoginContactRef.current?.value,
     };
 
     if (userLoginContactRef.current?.value) {
@@ -52,7 +50,6 @@ const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
         if (result.success) {
           setOpenModal(true);
           handleSnackbar(true, "success", result.message, dispatch);
-          // window.alert(result.message);
           setisFetching(false);
         } else {
           handleSnackbar(
@@ -63,7 +60,6 @@ const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
               : "Creating User Failed " + result.message,
             dispatch
           );
-          // window.alert('User Not Found')
           setisFetching(false);
         }
       });
@@ -78,43 +74,22 @@ const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
     }
   };
 
-  const handlePhoneChange = (event) => {
-    // event.preventDefault();
-  };
-
-
-  const CheckSnackBar = () => {
-    handleSnackbar(
-      true,
-      "warning",
-      "Please enter correct details before trying again",
-      dispatch
-    );
-  };
-
   const handleUserVerifyOtp = (e) => {
     setisFetching(true);
     e.preventDefault();
     let formData = {
-      userContactNo: userLoginContactRef.current.value,
+      userContactNo: "+91" + userLoginContactRef.current.value,
       verifyCode: Otp.current.value,
-
     };
 
     const res = dispatch(VerifyOtp(formData));
     res.then((result) => {
       if (result?.success) {
-
-          handleSnackbar(
-            true,
-            "success",
-            "Logged In",
-            dispatch
-          );
-          // window.alert('Logged In')
-          setisFetching(false);
-          setOpenModal(false);
-
+        handleSnackbar(true, "success", "Logged In", dispatch);
+        setUserId(result.data)
+        getUserById(result.data);
+        setisFetching(false);
+        setOpenModal(false);
       } else {
         handleSnackbar(
           true,
@@ -122,51 +97,80 @@ const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
           "Failed To LogIn : Invalid token",
           dispatch
         );
-        // window.alert('Logged In')
         setisFetching(false);
-        setOpenModal(false);
-        navigate("/")
+        Otp.current.value = "";
       }
     });
   };
 
+
+  const getUserById = (Id) => {
+    const res = dispatch(GetUserById(Id,navigate));
+    res.then((result) => {
+      if (result?.success) {
+        handleSnackbar(true, "success", "Fetched User By Id", dispatch);
+      } else {
+        handleSnackbar(
+          true,
+          "error",
+          "Failed to Fetch user details",
+          dispatch
+        );
+      }
+    });
+  }
+
   return (
     <div className="LoginPageContainer">
-      <div className="LoginHeaderComponentHeaderContainer">
-        <HeaderComponent
-          IsCurrentPage={IsCurrentPage}
-          setIsCurrentPage={setIsCurrentPage}
-        />
-      </div>
-      <Dialog open={OpenModal} height={"xl"}>
-        <DialogTitle> Enter the OTP Sent To Your Phone</DialogTitle>
-        <DialogContent>
+      <Dialog
+        open={OpenModal}
+        height={"xl"}
+        PaperProps={{ style: { width: "400px", height: "300px" } }}
+      >
+        <DialogTitle>
+          {" "}
+          Enter the OTP Sent To {userLoginContactRef?.current?.value}
+        </DialogTitle>
+        <DialogContent
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <TextField
             autoFocus
             margin="dense"
             label="OTP"
             sx={{ marginTop: 2 }}
-            type="number"
+            type="tel"
             inputRef={Otp}
             variant="outlined"
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleModalUpdate} style={{ color: "grey" }}>
-            Cancel
+            Edit Contact Number
           </Button>
-          <Button onClick={handleUserVerifyOtp}>{isFetching ? <CircularProgress size="20px" /> : "Verify"}</Button>
+          <Button onClick={handleUserVerifyOtp}>
+            {isFetching ? <CircularProgress size="20px" /> : "Verify"}
+          </Button>
         </DialogActions>
       </Dialog>
 
       <div className="LoginPageMainContainer">
         <div className="LoginPageFormContainer">
           <div className="phoneInputContainer">
-            <PhoneInput
+            <TextField
+              autoFocus
+              margin="dense"
               error={UserPhoneError}
               placeholder="Enter phone number"
-              ref={userLoginContactRef}
-              onChange={(e) => handlePhoneChange(e)}
+              inputRef={userLoginContactRef}
+              label="Contact Number"
+              sx={{ marginTop: 2, width: "20rem" }}
+              type="tel"
+              variant="outlined"
             />
           </div>
           {UserPhoneError && (
@@ -186,6 +190,7 @@ const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
                 className="AlreadyHaveAnAccount"
                 style={{
                   cursor: "pointer",
+                  marginLeft: "10px",
                 }}
               >
                 Create Account
@@ -194,9 +199,6 @@ const LoginPage = ({ IsCurrentPage, setIsCurrentPage }) => {
           </span>
         </div>
       </div>
-      <span className="BottomMostText">
-        Copyright @ DuesTake 2022. All Rights Reserved.
-      </span>
     </div>
   );
 };

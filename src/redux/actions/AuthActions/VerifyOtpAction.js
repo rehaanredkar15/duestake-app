@@ -10,6 +10,7 @@ export const VerifyOtp = (formData) => async(dispatch) => {
 
       if(data.success){
 
+        console.log(data);
         // navigate("/")
         return data;
       }

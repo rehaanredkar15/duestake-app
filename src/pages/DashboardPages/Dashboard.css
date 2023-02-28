@@ -1,0 +1,17 @@
+
+
+.DashboardPageContainer{
+    /* border: 1px solid red; */
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.FomPageComponent{
+    /* border: 1px solid red; */
+    width: 50%;
+}

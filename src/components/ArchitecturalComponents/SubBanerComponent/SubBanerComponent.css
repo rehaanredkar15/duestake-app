@@ -8,46 +8,79 @@
   position: relative;
 }
 
-.SubBannerMainImage {
-  height: 80%;
+.SubBannerContainerImage {
+  /* border: 1px solid red; */
+  height: 70%;
+  width: 25%;
+}
+
+.SubBannerContainerContents {
+  /* border: 1px solid yellow; */
+  height: 75%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.SubBanerImage {
+  object-fit: contain;
+  height: 100%;
+  width: 90%;
+}
+
+.SubBanerContainerTitleKey {
   width: 80%;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-}
-
-.SubBannerMainContainer img {
-  width: 80%;
-  height: auto;
-}
-
-.SubBannerMainContainer .btn {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  cursor: pointer;
-  text-align: center;
-  background: #ffffff;
-  border-radius: 10px;
-  width: 223px;
-  height: 67px;
-  border: none;
-  font-family: "Manrope",;
-  font-style: normal;
+.SubBanerContainerTitleValue {
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 30px;
-  /* identical to box height, or 167% */
-  text-align: center;
-  letter-spacing: -0.02em;
-  color: #1c6ef7;
+  font-size: 28px;
+  line-height: 33px;
+  color: #2b3749;
+  /* border: 1px solid red; */
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
-/* .SubBannerMainContainer .btn:hover {
-    background-color: black;
-  } */
+.SubBanerContainerContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.SubBanerContainerKey {
+  font-family: "Poppins", sans-serif;
+
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #2b3749;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.SubBanerContainerValue {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Poppins"f;
+
+  color: #2b3749;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}

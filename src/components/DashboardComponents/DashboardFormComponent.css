@@ -1,0 +1,19 @@
+.companyName{
+  font-family: "Poppins", sans-serif;
+  font-size: 600;
+}
+
+.OnboardingPageContainer{
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    /* border: 1px solid red; */
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}

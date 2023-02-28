@@ -2,95 +2,58 @@
   /* border: 1px solid red; */
   height: 85vh;
   display: flex;
-}
-
-.BanerLeftContainer {
-  /* border: 1px solid blue; */
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.BanerLeftBottomContainer {
-  /* border: 1px solid purple; */
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: 30%;
+  background: #f8f8f9;
   justify-content: center;
-}
-
-.BanerLeftTopContainer {
-  /* border: 1px solid red; */
-  height: 70%;
-  display: flex;
-  width: 90%;
   align-items: center;
-  letter-spacing: 0.015em;
-  color: #000000;
+  flex-direction: column;
 }
 
-.BanerLeftTopContainer {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 80px;
-  align-items: center;
-  display: flex;
-}
-
-.BannerLeftBottomText {
+.CalcutorTitle {
+  font-family: 'Poppins', sans-serif;
   /* border: 1px solid red; */
-  width: 70%;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 160%;
-  letter-spacing: 0.02em;
-  color: #000000;
-}
-
-.BanerLeftTopContainerLoan{
-    /* border: 1px solid red; */
-    height: 10%;
-    display: flex;
-    justify-content: end;
-}
-
-
-
-.ApplyForLoanBtn {
-  width: 254px;
-  height: 47px;
-  font-family: "Nunito Sans";
-  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 25px;
-  border: none;
   /* identical to box height */
-  letter-spacing: 0.06em;
-  background: #1c6ef7;
-  border-radius: 16px;
-  color: #ffffff;
-  margin-top: 50px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2b3749;
+}
+
+.CalculatorContainer {
+  /* border: 1px solid yellow; */
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.CalculatorLeftImageContainer {
+  /* border: 1px solid blue; */
+  height: 100%;
+  width: 50%;
+}
+
+.CalculatorRightCalculator {
+  /* border: 1px solid green; */
+  height: 98%;
+  width: 50%;
+  background-color:#FFFFFF;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 10px;
 }
 
 
-.BanerLeftContainerRight{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
+.CalculatorImageContainer{
+  /* border: 1px solid red; */
 }
 
-.BannerLeftContainerRightImage{
-    margin-left: 20px;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.CalculatorImageContainer{
+  width: 110%;
+  height: 100%;
+  object-fit: contain;
 }

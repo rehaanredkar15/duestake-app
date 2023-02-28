@@ -16,14 +16,16 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { VerifyOtp } from "../../../redux/actions/AuthActions/VerifyOtpAction";
 import { SendOtp } from "../../../redux/actions/AuthActions/SendOtpAction";
 import { UserRegister } from "../../../redux/actions/AuthActions/UserRegisterAction";
+import { GetUserById } from "../../../redux/actions/UserActions/getUserByIdAction";
 
 const SignUpPage = ({ IsCurrentPage, setIsCurrentPage }) => {
-  let userSignupContactRef = useRef();
+  let userSignupContactRef = useRef(null);
   let userEmail = useRef();
   const [UserPhoneError, setUserPhoneError] = useState("");
   const dispatch = useDispatch();
   const [isFetching, setisFetching] = useState(false);
   const [OpenModal, setOpenModal] = useState(false);
+  const [UserId, setUserId] = useState(false);
   const Otp = useRef();
   const navigate = useNavigate();
 
@@ -41,7 +43,7 @@ const SignUpPage = ({ IsCurrentPage, setIsCurrentPage }) => {
     }
 
     let uploadData = {
-      userContactNo: userSignupContactRef.current?.value.split(" ").join(""),
+      userContactNo: "+91" + userSignupContactRef.current?.value,
     };
 
     if (userSignupContactRef.current?.value) {
@@ -52,7 +54,6 @@ const SignUpPage = ({ IsCurrentPage, setIsCurrentPage }) => {
           setisFetching(false);
           setOpenModal(true);
           handleSnackbar(true, "success", result.message, dispatch);
-          // window.alert(result.message);
         } else {
           setisFetching(false);
           handleSnackbar(
@@ -76,71 +77,79 @@ const SignUpPage = ({ IsCurrentPage, setIsCurrentPage }) => {
     }
   };
 
-  const handlePhoneChange = (event) => {
-    // event.preventDefault();
-  };
-
-  const CheckSnackBar = () => {
-    handleSnackbar(
-      true,
-      "warning",
-      "Please enter correct details before trying again",
-      dispatch
-    );
-  };
 
   const handleUserVerifyOtp = (e) => {
     e.preventDefault();
-    
-    if (userSignupContactRef.current?.value &&  userEmail.current.value &&  Otp.current.value ) {
+
+    if (
+      Otp.current.value
+    ) {
       setisFetching(true);
-    let formData = {
-      userContactNo: userSignupContactRef.current.value,
-      userEmail: userEmail.current.value,
-      verifyCode: Otp.current.value,
-    };
+      let formData = {};
 
-    const res = dispatch(UserRegister(formData));
-    res.then((result) => {
-      if (result.success) {
-        // const snackbarDetails = {
-        //   snackbarOpen: true,
-        //   snackbarType: "success",
-        //   snackbarMessage: `Logged In`,
-        // };
-        // dispatch(ChangeSnackbar(snackbarDetails));
-        // window.alert("Created Account Successfully");
-        handleSnackbar(true, "Created Account Successfully", "", dispatch);
-        setisFetching(false);
-        setOpenModal(false);
-        navigate("/");
-      } else {
-        // const snackbarDetails = {
-        //   snackbarOpen: true,
-        //   snackbarType: "error",
-        //   snackbarMessage: `Failed To LogIn : Invalid token`,
-        // };
-        // dispatch(ChangeSnackbar(snackbarDetails));
-        // setOpenModal(false);
-        // window.alert("Failed to Create Account");
-        handleSnackbar(true, "Failed To Create Account : Invalid token", "", dispatch);
-        setisFetching(false);
+      if( userEmail?.current?.value){
+
+        formData = {
+          userContactNo: "+91"+ userSignupContactRef.current.value,
+          userEmail: userEmail.current.value,
+          verifyCode: Otp.current.value,
+        };
+      }else{
+        formData = {
+          userContactNo: "+91"+ userSignupContactRef.current.value,
+          verifyCode: Otp.current.value,
+        };
       }
-    });
 
-    }else{
-      window.alert('enter all the details')
+      const res = dispatch(UserRegister(formData));
+      res.then((result) => {
+        if (result.success) {
+          handleSnackbar(true,"success","Created Account Successfully",  dispatch);
+          setisFetching(false);
+          setOpenModal(false);
+          getUserById(result.data);
+        } else {
+          handleSnackbar(
+            true,
+            "error",
+            "Failed To Create Account : Invalid token",
+            dispatch
+          );
+          setisFetching(false);
+        }
+      });
+    } else {
+      handleSnackbar(
+        true,
+        "warning",
+        "Please Enter OTP",
+        dispatch
+      );
     }
   };
 
+  const getUserById = (Id) => {
+    const res = dispatch(GetUserById(Id,navigate));
+    res.then((result) => {
+      if (result?.success) {
+        handleSnackbar(true, "success", "Fetched User By Id", dispatch);
+      } else {
+        handleSnackbar(
+          true,
+          "error",
+          "Failed to Fetch user details",
+          dispatch
+        );
+      }
+    });
+  }
+
+  console.log(userSignupContactRef?.current?.value);
+
+
+
   return (
     <div className="LoginPageContainer">
-      <div className="LoginHeaderComponentHeaderContainer">
-        <HeaderComponent
-          IsCurrentPage={IsCurrentPage}
-          setIsCurrentPage={setIsCurrentPage}
-        />
-      </div>
       <Dialog open={OpenModal} height={"xl"}>
         <DialogTitle> Enter the OTP Sent To Your Phone</DialogTitle>
         <DialogContent>
@@ -150,32 +159,42 @@ const SignUpPage = ({ IsCurrentPage, setIsCurrentPage }) => {
             label="OTP"
             type="number"
             inputRef={Otp}
+            fullWidth
             variant="outlined"
-          />
+            />
           <TextField
             id="outlined-basic"
-            label="Email"
+            label="Email(optional)"
             inputRef={userEmail}
+            fullWidth
             variant="outlined"
-            style={{ width: "50%",marginTop:6,marginLeft:2 }}
+            style={{  marginTop: 6, marginLeft: 2 }}
             placeholder="Enter your Email Id"
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleModalUpdate} style={{ color: "grey" }}>
-            Cancel
+        <Button onClick={handleModalUpdate} style={{ color: "grey" }}>
+            Edit Contact Number
           </Button>
-          <Button onClick={handleUserVerifyOtp}>  {isFetching ? <CircularProgress size="20px" /> : "Verify"} </Button>
+          <Button onClick={handleUserVerifyOtp}>
+            {" "}
+            {isFetching ? <CircularProgress size="20px" /> : "Verify"}{" "}
+          </Button>
         </DialogActions>
       </Dialog>
       <div className="LoginPageMainContainer">
         <div className="LoginPageFormContainer">
           <div className="phoneInputContainer">
-            <PhoneInput
+            <TextField
+              autoFocus
+              margin="dense"
               error={UserPhoneError}
               placeholder="Enter phone number"
-              ref={userSignupContactRef}
-              onChange={(e) => handlePhoneChange(e)}
+              inputRef={userSignupContactRef}
+              label="Contact Number"
+              sx={{ marginTop: 2, width: "20rem" }}
+              type="tel"
+              variant="outlined"
             />
           </div>
           {UserPhoneError && (
@@ -189,12 +208,13 @@ const SignUpPage = ({ IsCurrentPage, setIsCurrentPage }) => {
             {isFetching ? <CircularProgress size="20px" /> : "Create Account"}
           </Button>
           <span className="AlreadyHaveAnAccount">
-            Already have an Account,
+            Already have an Account,  
             <Link to="/login">
               <span
                 className="AlreadyHaveAnAccount"
                 style={{
                   cursor: "pointer",
+                  marginLeft:'10px'
                 }}
               >
                 Login
@@ -203,9 +223,6 @@ const SignUpPage = ({ IsCurrentPage, setIsCurrentPage }) => {
           </span>
         </div>
       </div>
-      <span className="BottomMostText">
-        Copyright @ DuesTake 2022. All Rights Reserved.
-      </span>
     </div>
   );
 };

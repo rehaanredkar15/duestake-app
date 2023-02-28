@@ -1,0 +1,143 @@
+.ProfileComponentContainer {
+  /* border: 1px solid yellow; */
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+}
+
+.ProfileComponentTopSection {
+  /* border: 1px solid red; */
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+}
+
+.ProfileComponentBottomSection {
+  /* border: 1px solid red; */
+  height: 60%;
+  padding: 2rem;
+}
+
+.ProfileComponentDetails {
+  /* border: 1px solid blue; */
+  width: 50%;
+  padding: 1rem;
+}
+
+.ProfileComponentStatistics {
+  /* border: 1px solid green; */
+  padding: 1rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProfileComponentTitle {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 21px;
+  /* identical to box height, or 95% */
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+  letter-spacing: -0.02em;
+
+  color: #6488e7;
+}
+
+.ProfileComponentDetailsCard {
+  background: #dee7ff;
+  border-radius: 8px;
+  height: 50%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  justify-content: space-around;
+}
+
+.StatisticsCard {
+  width: 200px;
+  height: 94px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-radius: 15px;
+  /* border: 1px solid red; */
+}
+
+.StatisticsCardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.StaticalNumber {
+  /* border: 1px solid red; */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e2e2e;
+}
+
+.StatisticsCardContainer {
+  height: 80%;
+  width: 80%;
+}
+
+.StatiscalData {
+  /* border: 1px solid red; */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #2e2e2e;
+}
+
+.SettingsOptions {
+  /* border: 1px solid red; */
+  height: 90%;
+  width: 90%;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.settingsCard {
+  background: #ffffff;
+  border: 1px solid #E3E3E3;
+  border-radius: 15px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2e2e2e;
+}
+
+
+.Settingtitle{
+    margin-left: 10px;
+}

@@ -1,30 +1,22 @@
 import React from "react";
 import "./BanerComponent.css";
 import EWallet  from '../../../photos/EWallet.png';
+import CalculatorComponent from "../../HelperComponents/CalculatorComponents/CalculatorComponent";
+import Baner  from '../../../photos/Baner/baner.png'
 
 
 const BanerComponent = () => {
   return (
     <>
       <div className="BanerMainContainer">
-        <div className="BanerLeftContainer">
-          <div className="BanerLeftTopContainer">
-            <span className="BanerLeftTopContainer">
-              Best Solution for all Type of Loan
-            </span>
+        <span className="CalcutorTitle">Calculate How Much Loan Do You Need?</span>
+        <div className="CalculatorContainer">
+          <div className="CalculatorLeftImageContainer">
+           <img src={Baner} alt="" className="CalculatorImageContainer"/>
           </div>
-          <div className="BanerLeftBottomContainer">
-            <span className="BannerLeftBottomText">
-              To get a loan , apply with necessary documentation.If approved,
-              receive funds and make payments as agreed
-            </span>
-             <button className="ApplyForLoanBtn">
-                Apply For Loan
-             </button>
+          <div className="CalculatorRightCalculator">
+            <CalculatorComponent/>
           </div>
-        </div>
-        <div className="BanerLeftContainerRight">
-          <img src={EWallet} alt="banerComponent" className="BannerLeftContainerRightImage" />
         </div>
       </div>
     </>

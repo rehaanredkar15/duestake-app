@@ -1,107 +1,61 @@
-.ProcessMainContainer {
-  /* border: 1px solid blue; */
-  height: 100%;
-}
-
-.ProcessTopContainer {
-  /* border: 1px solid red; */
-  height: 18%;
-  display: flex;
-  justify-content: end;
-  flex-direction: column;
-  margin-left: 4rem;
-}
-
-.ProcessMainDataContainer {
-  /* border: 1px solid yellow; */
-  height: 80%;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  padding: 5rem;
-}
-
-.ProcessTitle {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 45px;
-  line-height: 66px;
-  letter-spacing: -0.03em;
-  color: #000000;
-}
-
-.ProcessMainDataComponent {
-  /* border: 1px solid red; */
-  height: 50%;
-  width: 30%;
-  box-sizing: border-box;
-  width: 359.13px;
-  height: 382px;
-  left: 75px;
-  top: 1256px;
-  padding: 1rem;
-  background: #ffffff;
-  border: 1px solid #dbe4e9;
-  border-radius: 20px;
-}
-
-
-.CardTopContainer{
- 
-  font-family: 'Manrope',;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 30px;
-  /* identical to box height */
-  color: #000000;
-}
-
-
-
-.ProcessInformationContainer {
+.ProccesMainComponent {
   /* border: 1px solid red; */
   height: 100%;
+  background: #f8f8f9;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 
-.CardBottomDetailsContainer {
+.ProccesMainTitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  width: 195px;
+  height: 33px;
+  color: #2b3749;
+}
+
+.DuesStakeProccesContainerMain {
   /* border: 1px solid red; */
-  width: 60%;
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
+  height: 30%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.DuestakeProccesContainer {
+  width: 250px;
+  height: 110px;
+  /* border: 1px solid red; */
+  background: #fdfdfd;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 25px 25px rgba(17, 17, 17, 0.06);
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DuestakeProccessBankImg {
+  width: 20%;
+  /* border: 1px solid red; */
+}
+
+.ProcessName {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
   line-height: 26px;
-  /* or 186% */
-
+  /* identical to box height, or 162% */
+  margin-left: 10px;
   text-align: center;
-  letter-spacing: -0.02em;
-}
 
-.CardTopIconContainer {
-  /* border: 1px solid red; */
-  margin-bottom: 20px;
-}
-
-.CardIconImage {
-  height: 50px;
-  width: 50px;
-}
-
-.CardTitleContainer {
-  margin-bottom: 10px;
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 34px;
-  /* or 113% */
-  text-align: center;
-  letter-spacing: -0.03em;
   color: #000000;
 }

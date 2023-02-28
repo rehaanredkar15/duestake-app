@@ -1,45 +1,48 @@
 import React from "react";
 import "./ProcessComponent.css";
-import CardIcon from "../../../photos/CardIcon.png";
-import CardIcon2 from "../../../photos/CardIcon2.png";
+import ICCI from '../../../photos/process/ICCI.png'
+import Bajaj from '../../../photos/process/bajaj.png'
+import InCred from '../../../photos/process/InCred.png'
+import MoneyView from '../../../photos/process/moneyview.png'
+
 
 const ProcessComponent = () => {
   return (
     <>
-      <div className="ProcessMainContainer">
-        <div className="ProcessTopContainer">
-          <span className="ProcessTitle">Top Banks & Financials</span>
-          <span className="ProcessBottomInfo">
-            Bringing you the Best Products from Top Banks & Financial
-            Institutions.{" "}
-          </span>
-        </div>
-        <div className="ProcessMainDataContainer">
-          <div className="ProcessMainDataComponent">
-            <div className="CardTopContainer">01</div>
-            <div className="ProcessInformationContainer">
-              <div className="CardTopIconContainer">
-                <img src={CardIcon} alt="" className="CardIconImage" />
-              </div>
-              <span className="CardTitleContainer">Apply for laon</span>
-              <span className="CardBottomDetailsContainer">
-                orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna{" "}
-              </span>
-            </div>
+      <div className="ProccesMainComponent">
+        <div className="ProccesMainTitle">Our Partners</div>
+        <div className="DuesStakeProccesContainerMain">
+          <div className="DuestakeProccesContainer">
+            <img
+              src={ICCI}
+              alt="bankLogo"
+              className="DuestakeProccessBankImg"
+            />
+            <span className="ProcessName">ICCI Bank</span>
           </div>
-          <div className="ProcessMainDataComponent">
-            <div className="CardTopContainer">02</div>
-            <div className="ProcessInformationContainer">
-              <div className="CardTopIconContainer">
-                <img src={CardIcon2} alt="" className="CardIconImage" />
-              </div>
-              <span className="CardTitleContainer">Get Credit card</span>
-              <span className="CardBottomDetailsContainer">
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </span>
-            </div>
+          <div className="DuestakeProccesContainer">
+            <img
+              src={Bajaj}
+              alt="bankLogo"
+              className="DuestakeProccessBankImg"
+            />
+              <span className="ProcessName">Bajaj Finserv</span>
+          </div>
+          <div className="DuestakeProccesContainer">
+            <img
+              src={InCred}
+              alt="bankLogo"
+              className="DuestakeProccessBankImg"
+            />
+            <span className="ProcessName">In Cred</span>
+          </div>
+          <div className="DuestakeProccesContainer">
+            <img
+              src={MoneyView}
+              alt="bankLogo"
+              className="DuestakeProccessBankImg"
+            />
+              <span className="ProcessName">Money View</span>
           </div>
         </div>
       </div>

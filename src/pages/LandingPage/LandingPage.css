@@ -1,35 +1,67 @@
 
 .LandingPageContainer{
-    height: 380vh;
+    height: 100vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.LandingPageContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.LandingOtherPageContainer{
+    height: 100vh;
 }
 
 .HeaderComponentHeaderContainer{
-    height: 3%;
+    height: 10%;
+}
+
+.HeaderComponentHeaderOtherContainer{
+    height: 10%;
 }
 
 .LandingPagePartnerComponent{
-    height: 10%;
+    height: 17%;
 }
 
 
 .LadingPageProcessComponent{
-    height:25%;
+    height:15%;
 }
 
 .LadingPageSubBanerComponent{
-    height: 20%;
+    height: 25%;
 }
 
+.LandingPageHeadContainer{
+    height: 350vh;
+
+}
+
+.LadingPageImpactComponent{
+    height: 15%;
+    /* border: 1px solid yellow */
+}
 
 .FooterComponent{
     /* border: 1px solid yellow; */
-    height: 20%;
+    height: 55%;
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    justify-content: center;
+    background: #F8F8F9;
+}
+
+.FooterOtherComponent{
+    /* border: 1px solid yellow; */
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    background: #F8F8F9;
 }
 
 .BottomMostText{
     display: flex;
+    height:1%;
     justify-content: center;
 }

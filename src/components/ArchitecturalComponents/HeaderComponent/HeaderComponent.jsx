@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
 import "./HeaderComponent.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import LogoPng from "../../../photos/header/Logo.png";
 
 const HeaderComponent = ({ IsCurrentPage, setIsCurrentPage }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -11,10 +15,20 @@ const HeaderComponent = ({ IsCurrentPage, setIsCurrentPage }) => {
     }
   }, []);
 
+  const handleLogout = () => {
+    localStorage.clear();     
+    window.location.reload();
+    // navigate("/")
+  }
+
   return (
     <>
       <div className="HeaderComponentContainer">
-        <div className="HeaderLogoContainer">DUESTAKE</div>
+        <div className="HeaderLogoContainer">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <img src={LogoPng} alt="Duestake" className="LogoDuestake" />
+          </Link>
+        </div>
         <div className="HeadercenterContainer">
           <ul className="HeaderPagesListContainer">
             <li
@@ -28,31 +42,36 @@ const HeaderComponent = ({ IsCurrentPage, setIsCurrentPage }) => {
                 Home
               </Link>
             </li>
-            <li className="HeaderPagesListItem">About Us</li>
-            <li className="HeaderPagesListItem"> Contact Us</li>
           </ul>
         </div>
         <div className="HeaderRightContainer">
-          {location.pathname === "/login" ?
-          (<></>)
-          :(
+          {user && user?._id ? (
             <>
-              <Link to="/login">
-                <button className="HeaderLoginButton">LOGIN</button>
-              </Link>
+             <button className="HeaderLoginButton" onClick={handleLogout}>LOGOUT</button>
             </>
-          )}
-        
-        {location.pathname === "/signup" ?
-          (<></>)
-          :(
+          ) : (
             <>
-              <Link to="/signup">
-              <button className="HeaderSingupButton">SIGNUP</button>
-              </Link>
-            </>
-          )}
+              {location.pathname === "/login" ? (
+                <></>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <button className="HeaderLoginButton">LOGIN</button>
+                  </Link>
+                </>
+              )}
 
+              {location.pathname === "/signup" ? (
+                <></>
+              ) : (
+                <>
+                  <Link to="/signup">
+                    <button className="HeaderSingupButton">SIGN UP</button>
+                  </Link>
+                </>
+              )}
+            </>
+          )}
         </div>
       </div>
     </>

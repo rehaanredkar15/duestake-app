@@ -2,6 +2,8 @@
 .LoginPageContainer{
     height: 100vh;
     /* border: 1px solid red; */
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .LoginHeaderComponentHeaderContainer{
@@ -28,10 +30,9 @@
 
 
 .PhoneInput Input{
-
     height: 40px;
     outline: none;
-    width: 17rem;
+    width: 18rem;
     margin-left: 4px;
     font-size:medium;
   }
