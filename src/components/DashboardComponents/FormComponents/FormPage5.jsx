@@ -156,7 +156,6 @@ const FormPage5 = ({ onCompleted, setPanCadLock,PanCadLock  }) => {
     res.then((result) => {
       if (result?.success) {
         setAccepted(false);
-        handleSnackbar(true, "success", "Fetched User By Id", dispatch);
       } else {
         handleSnackbar(true, "error", "Failed to Fetch user details", dispatch);
       }

@@ -8,7 +8,7 @@ import { Routes, Route, Link, Navigate } from "react-router-dom";
 import DashboardProfileComponent from "../DashboardProfileComponent/DashboardProfileComponent";
 
 const DashboardComponent = () => {
-  const [IsCurrentPage, setIsCurrentPage] = useState(false);
+  const [IsCurrentPage, setIsCurrentPage] = useState(true);
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleOnClick = () => {

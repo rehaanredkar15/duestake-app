@@ -116,7 +116,6 @@ const FormPage4 = ({ setPanCadLock, PanCadLock,setActiveStep }) => {
     res.then((result) => {
       if (result?.success) {
         console.log(result.data);
-        handleSnackbar(true, "success", "Fetched User By Id", dispatch);
       } else {
         handleSnackbar(true, "error", "Failed to Fetch user details", dispatch);
       }

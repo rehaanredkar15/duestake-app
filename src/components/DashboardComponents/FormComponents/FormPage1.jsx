@@ -38,7 +38,6 @@ const FormPage1 = ({ onCompleted, setPanCadLock,PanCadLock }) => {
     res.then((result) => {
       if (result?.success) {
         console.log(result.data);
-        handleSnackbar(true, "success", "Fetched User By Id", dispatch);
       } else {
         handleSnackbar(
           true,
